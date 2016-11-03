@@ -3,31 +3,31 @@ var Hobbit = require('../exercises/hobbit');
 
 describe('Hobbit', function () {
 
-  it.skip('should be a function', function () {
+  it('should be a function', function () {
     assert.isFunction(Hobbit);
   });
 
-  it.skip('should instantiate our good friend, Hobbit', function () {
+  it('should instantiate our good friend, Hobbit', function () {
     var hobbit = new Hobbit();
     assert.isObject(hobbit);
   });
 
-  it.skip('should have a name', function () {
+  it('should have a name', function () {
     var hobbit = new Hobbit('Bilbo');
     assert.equal(hobbit.name, 'Bilbo');
   });
 
-  it.skip('should have an unadventurous disposition', function() {
+  it('should have an unadventurous disposition', function() {
     var hobbit = new Hobbit('Samwise');
     assert.equal(hobbit.disposition, 'homebody');
   });
 
-  it.skip('should have an age', function() {
+  it('should have an age', function() {
     var hobbit = new Hobbit('Meriadoc');
     assert.equal(hobbit.age, 0);
   });
 
-  it.skip('should have gained 1 year after every birthday', function() {
+  it('should have gained 1 year after every birthday', function() {
     var hobbit = new Hobbit('Meriadoc');
     assert.equal(hobbit.age, 0);
     hobbit.celebrate_birthday();
@@ -42,14 +42,14 @@ describe('Hobbit', function () {
     }
   }
 
-  it.skip('should be considered a child at the age of 32', function() {
+  it('should be considered a child at the age of 32', function() {
     var hobbit = new Hobbit('Taylor');
     timeTravel(32, hobbit);
     assert.equal(hobbit.age, 32);
     assert(!hobbit.adult());
   });
 
-  it.skip('should be considered an adult at 33', function() {
+  it('should be considered an adult at 33', function() {
     var hobbit = new Hobbit('Taylor');
     timeTravel(33, hobbit);
     assert.equal(hobbit.age, 33);
@@ -58,22 +58,27 @@ describe('Hobbit', function () {
 
 
 
-  it.skip('should be short', function() {
-    //create a hobbit
-    // check that .isShort returns true
+  it('should be short', function() {
+    var hobbit = new Hobbit('Bree');
+    assert.equal(hobbit.short, true);
   });
 
-  it.skip('should be considered old after the age of 101', function() {
-    //create a hobbit
-    //have hobbit age 101 years, hint use timeTravel()
-    //check that hobbit.old returns true
+  it('should be considered old after the age of 101', function() {
+    var hobbit = new Hobbit('Dale');
+    timeTravel(102, hobbit);
+    assert.equal(hobbit.age, 102);
+    assert.equal(hobbit.old(), true);
+    var hobbit2 = new Hobbit('Cheech');
+    timeTravel(101, hobbit2);
+    assert.equal(hobbit2.age, 101);
+    assert.equal(hobbit2.old(), false);
   });
 
-  it.skip('should have the ring if its name is frodo', function() {
-    //create a hobbit named frodo
-    // create a second hobbit named Sam
-    //check that .hasRing() for Frodo returns true
-    //check that .hasRing() for Sam returns false
+  it('should have the ring if its name is frodo', function() {
+    var hobbit = new Hobbit('Frodo');
+    var hobbit2 = new Hobbit('Sam');
+    assert.equal(hobbit.hasRing(), true);
+    assert.equal(hobbit2.hasRing(), false);
   });
 
 });

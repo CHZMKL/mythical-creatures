@@ -1,28 +1,29 @@
 var assert = require('chai').assert;
-var {Medusa, Person} = require('../exercises/medusa');
+var Medusa = require('../exercises/medusa');
+var Person = require('../exercises/medusa');
 
 describe('Medusa', function () {
 
-  it.skip('should be a function', function () {
+  it('should be a function', function () {
     assert.isFunction(Medusa);
   });
 
-  it.skip('should instantiate our good friend, Medusa', function () {
+  it('should instantiate our good friend, Medusa', function () {
     var medusa = new Medusa();
     assert.isObject(medusa);
   });
 
-  it.skip('should have a name', function () {
+  it('should have a name', function () {
     var medusa = new Medusa('Bree');
     assert.equal(medusa.name, 'Bree');
   });
 
-  it.skip('should start with no statues', function()  {
+  it('should start with no statues', function()  {
     var medusa = new Medusa('Taytay');
     assert.deepEqual(medusa.statues, []);
   });
 
-  it.skip('should gain a statue when staring at a person', function() {
+  it('should gain a statue when staring at a person', function() {
     var medusa = new Medusa('Brenna');
     var victim = new Person('Jhun');
 

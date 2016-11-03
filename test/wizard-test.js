@@ -3,16 +3,16 @@ var Wizard = require('../exercises/wizard');
 
 describe('Wizard', function() {
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     assert.isFunction(Wizard);
   });
 
-  it.skip('should instantiate our good friend, Wizard', function() {
+  it('should instantiate our good friend, Wizard', function() {
     var wizard = new Wizard();
     assert.isObject(wizard);
   });
 
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var wizard = new Wizard({name: 'Jhun'});
     assert.equal(wizard.name, 'Jhun');
   });
@@ -24,7 +24,7 @@ describe('Wizard', function() {
 
   it.skip('should not always be bearded', function() {
     var wizard = new Wizard({name: 'Jhun', bearded: false});
-    assert(!wizard.bearded)
+    assert(!wizard.bearded);
   });
 
   it.skip('should have root powers', function() {
